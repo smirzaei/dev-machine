@@ -1,11 +1,14 @@
 FROM ubuntu:latest
 
+ENV LC_CTYPE en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TERM xterm
 ENV ZSH_THEME soroush
 
-RUN apt update && \
-  apt install git curl zsh vim wget build-essential openssh-server sudo -y && \
+RUN apt-get update && \
+  apt-get install git curl zsh vim wget build-essential openssh-server sudo -y && \
   chsh -s $(which zsh)
 
 # Install oh my zsh
