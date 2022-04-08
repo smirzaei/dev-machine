@@ -1,0 +1,9 @@
+version: "3.3"
+
+services:
+  dev_machine:
+    container_name: dev_container
+    build: .
+    tty: true
+    ports:
+      - "2222:22"
